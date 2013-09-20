@@ -48,6 +48,12 @@ public class Main {
                 System.out.println(coche.toString());
             }
         }
+        // f) Muestra todos aquellos coches que tengan como marca "Ford"
+        for (Coche coche:coches){
+            if(coche.getMarca()==Marca.Ford){
+                System.out.println(coche.toString());
+            }
+        }
         
     }
     

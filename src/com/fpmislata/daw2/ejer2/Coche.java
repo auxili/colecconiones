@@ -24,9 +24,9 @@ public class Coche {
     
     public String toString(){
         return  "Marca: " + marca +
-                "Modelo: " + modelo +
-                "Cilindrada: " + cilindrada + 
-                "Dni Propietario" + dniPropietario;
+                "\nModelo: " + modelo +
+                "\nCilindrada: " + cilindrada + 
+                "\nDni Propietario: " + dniPropietario;
     }
             
             
