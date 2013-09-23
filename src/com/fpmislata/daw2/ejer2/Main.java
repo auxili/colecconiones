@@ -5,7 +5,9 @@
 package com.fpmislata.daw2.ejer2;
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  *
@@ -55,6 +57,67 @@ public class Main {
             }
         }
         
+        //5. En la clase main
+        // a) Crea un Map con clave “String” y valor “Coche”.
+         Map<String,Coche> mapCoches = new HashMap<String,Coche>();
+        // b) Añade 5 elementos, cuya clave sea el DNI y el valor un Coche.(Uno de los DNIs
+        //será “12345678Z”.)( Dos al menos deben ser del tipo Ford)
+         
+         //ESTO ES UML
+         //hemos copiado y pegado la clase persona del otro proyecto para hacer:
+         //Cuando terminemos añadiomos una persona y dos coches, e imprimimos del 
+         //prmier coche el nombre de la persona del cual lo posee.
+         
+         Persona persona1,persona2;
+         persona1 = new Persona("Enrique","Nuñez","12345678Z");
+        //probando
+         persona2 = new Persona(null, null, null);
+         Coche coche6, coche7;
+         coche6 = new Coche(Marca.Ford, "12345678z", 2000, "nohacefalta");
+         coche7 = new Coche(Marca.Ford, "678z", 2000, null);
+         
+         //añadmos un coche a una persona
+         coche6.setPropietario(persona1); //la propiedad propietario vale persona.
+         coche7.setPropietario(persona2);//lo que hace es que la propiedad propietario de ese coche se almacene en Persona.
+
+         
+         //estaría mal así:
+         /*List<Coche> cochesList = new ArrayList<>();//mal porque aquí creamos un arraylist sobre otro que ya habría creado. donde el primero elemento apunta a un coche y el segundo al otro coche, donde las propiedades de coche que apuntan a persona que no las sacará de la otro lista. Un follón.
+         cochesList.add(coche6);
+         cochesList.add(coche7);
+        
+         persona1.setCoches(coches);
+         */
+         //y lo dejamos como
+         List<Coche> cochesList1 = persona1.getCoches(); 
+         //esto crea objeto cochesList1 que apunta a arraylist
+         cochesList1.add(coche6);
+         cochesList1.add(coche7);
+         //estas apuntan del arraylist hacia el coche
+         
+         //otra forma alternativa sería la siguiente:
+         //estas dos sería igual que las otras 4:
+         /*
+         List<Coche> cochesList1;
+         cochesList1 = persona1.getCoches(); 
+         cochesList1.add(coche6);
+         cochesList1.add(coche7);
+          */
+         persona1.getCoches().add(coche6);
+         persona1.getCoches().add(coche7);
+         //pero para que todo esto funcione debe estar el arraylist inicializado en el constructor.
+         /*pero este tema es el siguiente:
+          si lo inicializamos como propiedad en el private = new arraylist no lo deberíamos poner
+          en el constructor. Porque en el momento de crear el objeto persona se crearia el arraylist.*/
+         
+         //pero en lugar de hacer el set de coches hago un get coches quye me devuelve la lista de coches y lo añado
+         /*
+          * list bla bla = persona1.getCoches();
+          * coches.add(coche1);
+          * coches.add(coche2);
+          * Esto sería A LA PERSONA añadirle los coches
+          * que sería distinto a lo de antes que es añadir la persona a los coches.
+          */
     }
     
     

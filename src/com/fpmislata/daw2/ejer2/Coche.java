@@ -14,6 +14,10 @@ public class Coche {
     private String modelo;
     private int cilindrada;
     private String dniPropietario;
+    //añadimos un tipo de Persona que es el propietario
+    //esto es para el UML del 23/09/13
+    private Persona propietario;
+    //ahora dni propietario sobraria.
     
     public Coche (Enum marca, String modelo,int cilindrada, String dniPropietario){
         this.cilindrada=cilindrada;
@@ -85,6 +89,20 @@ public class Coche {
      */
     public void setDniPropietario(String dniPropietario) {
         this.dniPropietario = dniPropietario;
+    }
+
+    /**
+     * @return the propietario
+     */
+    public Persona getPropietario() {
+        return propietario;
+    }
+
+    /**
+     * @param propietario the propietario to set
+     */
+    public void setPropietario(Persona propietario) {
+        this.propietario = propietario;
     }
     
 }
